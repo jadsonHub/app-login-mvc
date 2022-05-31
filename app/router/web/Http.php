@@ -23,12 +23,14 @@ class Http{
                 "/user/login" => "UserController@fmrLogin",
                 "/user/detalhes/" => "UserController@txtParam",
                 "/user/dashboard" => "UserController@index",
-                "/user/criar" => "UserController@fmrCriar"
+                "/user/criar" => "UserController@fmrCriar",
+                "/user/calculo" => "UserController@fmrCalculo"
             ],
 
             "POST" => [
                 "/user/login" => "UserController@postLogin",
-                "/user/criar" => "UserController@postCriar"
+                "/user/criar" => "UserController@postCriar",
+                "/user/calculo" => "UserController@postCalculo"
             ]
         ];
     }

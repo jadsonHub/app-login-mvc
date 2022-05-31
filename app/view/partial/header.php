@@ -11,6 +11,9 @@
           <a class="nav-link text-white"  href="/">Página Inícial</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-white"  href="/user/calculo">Calculo de atv.</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-white" href="/user/criar">Criar conta</a>
         </li>
         <li class="nav-item">

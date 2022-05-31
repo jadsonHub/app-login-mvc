@@ -84,6 +84,39 @@ function required($indice, $uri, $page)
     }
 }
 
+function numberMax($indice, $uri, $page)
+{
+    $valor = floatval(filter_input(INPUT_POST, $indice));
+    if ($valor >= 0 && $valor <= 10) {
+        dadosPagina($indice . "_" . $page, $valor);
+        return $valor;
+    } else {
+        dadosPagina($indice . '_' . $page, $valor);
+        //criar a mesangem de error para o user
+        errorEredirect($indice . '_' . $page, 'Colocar nota de 0 a 10 no campo ' . filterParamentros($indice), $uri);
+
+        return null;
+    }
+}
+
+function isNumber($indice, $uri, $page)
+{
+
+    $valor = filter_input(INPUT_POST, $indice);
+
+    if (doubleval($valor)) {
+        dadosPagina($indice . "_" . $page, $valor);
+        return $valor;
+    } else {
+        dadosPagina($indice . '_' . $page, $valor);
+        //criar a mesangem de error para o user
+        errorEredirect($indice . '_' . $page, 'Colocar um numero valido  ' . filterParamentros($indice), $uri);
+
+        return null;
+    }
+}
+
+
 function campoVazio($campo)
 {
 
@@ -116,7 +149,12 @@ function filterParamentros($valor)
         'nome_usuario' => 'usuário',
         'validarSenha' => 'repetir senha',
         "senha_usuario" => 'senha',
-        "email_usuario" => 'email'
+        "email_usuario" => 'email',
+        'mt_pt' => 'português',
+        'mt_mat' => 'matematica',
+        "mt_bio" => 'biologia',
+        "mt_his" => 'historia',
+        "mt_qui" => "quimica"
     ];
     foreach ($filter as $indice => $value) {
         if ($indice === $valor) {
